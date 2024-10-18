@@ -1,4 +1,5 @@
 import "./itemlistcontainer.scss"
+import ItemList from "./ItemList"
 import { getProducts } from "../../data/data"
 import { useState, useEffect } from "react"
 
@@ -28,16 +29,8 @@ const ItemListContainer = ({greeting}) => {
             <div className="item-list">
             {greeting}
             </div>
-            <div>
-                {
-                    products.map((product)=>(
-                        <div>
-                            <img src={product.image} width={300} alt="" />
-                            <h2>{product.name}</h2>
-                            <p>Precio: ${product.price}</p>
-                        </div>
-                    ))
-                }
+            <div className="item-ord">
+                < ItemList products={products} />
             </div>
         </div>
     )

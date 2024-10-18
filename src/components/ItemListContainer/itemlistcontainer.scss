@@ -1,6 +1,19 @@
 .item-list{
-    padding: 360px 0 0 0;
+    padding: 360px 0 200px 0;
     font-size: 70px;
     font-weight: 700;
     color: #F2F2F2;
+}
+
+.item-ord{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-left: 150px;
+    justify-content: space-between;
+    margin-bottom: 100px;
+}
+
+.item{
+    margin-top: 80px;
+   
 }
