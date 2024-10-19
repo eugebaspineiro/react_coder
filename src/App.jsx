@@ -1,5 +1,8 @@
 import NavBar from './components/NavBar/NavBar'
 import ItemListContainer from './components/ItemListContainer/ItemListContainer'
+import ItemDetailContainer from './components/ItemDetailContiner/ItemDetailContainer'
+import Banner from './components/banner/Banner'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './App.css'
 
 function App() {
@@ -7,10 +10,26 @@ function App() {
 
   return (
     <div>
-      <NavBar />
-      <div className='banner-img'>
-        < ItemListContainer greeting= {"La belleza de lo esencial"} />
-      </div>
+      
+      <BrowserRouter>
+        <NavBar />
+        
+
+        <Routes>
+
+          <Route path='/' element={< ItemListContainer greeting= {"La belleza de lo esencial"}/> } />
+          <Route path='/category/:idCategory' element={< ItemListContainer greeting= {"La belleza de lo esencial"}/> }/>
+          <Route path='/detail/:idProduct' element={ < ItemDetailContainer />} />
+
+
+          {/* <div className='banner-img'>
+            < ItemListContainer greeting= {"La belleza de lo esencial"} />
+            < ItemDetailContainer />
+          </div> */}
+        </Routes>
+        
+        </BrowserRouter>
+     
     </div>
   )
 }

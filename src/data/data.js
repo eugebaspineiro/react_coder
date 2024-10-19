@@ -62,7 +62,7 @@ const products = [
         stock: 20,
         price: 22000,
         image: "/img/lampara-02.png",
-        category: "lámparas"
+        category: "lamparas"
       },
       {
         id: "LP002",
@@ -71,7 +71,7 @@ const products = [
         stock: 25,
         price: 14000,
         image: "/img/lampara-01.png",
-        category: "lámparas"
+        category: "lamparas"
       },
       {
         id: "LP003",
@@ -80,7 +80,7 @@ const products = [
         stock: 10,
         price: 30000,
         image: "/img/lampara-03.png",
-        category: "lámparas"
+        category: "lamparas"
       }
   
 ]
