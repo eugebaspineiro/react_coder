@@ -1,8 +1,9 @@
 .item-list{
-    padding: 360px 0 200px 0;
-    font-size: 70px;
-    font-weight: 700;
-    color: #252424;
+    padding: 400px 0 200px 0;
+    margin-left: -15px;
+    font-size: 100px;
+    font-weight: 800;
+    color:#F2F2F2;
     background-image: url(../../assets/banner.jpg);
     background-size: cover;
 }
@@ -18,4 +19,13 @@
 .item{
     margin-top: 80px;
    
+}
+
+.item-detail{
+    margin: 100px 60px 0 60px;
+    display: flex;
+}
+
+.text-detail{
+    margin-left: 40px;
 }

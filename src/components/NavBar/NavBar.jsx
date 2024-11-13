@@ -7,9 +7,6 @@ import { Link } from "react-router-dom"
 const NavBar = () => {
     return(
         <nav className="navbar">
-            <Link to="/" className="brand">
-                <img src= {logoNav} alt="" />
-            </Link>
             <ul>
                 <li>
                     <Link to="/category/sillones">Sillones</Link>
@@ -21,6 +18,10 @@ const NavBar = () => {
                     <Link to="/category/lamparas">Lamparas</Link>
                 </li>
             </ul>
+
+            <Link to="/" className="brand">
+                <img src= {logoNav} alt="" />
+            </Link>
 
             < CartWidget />
    
