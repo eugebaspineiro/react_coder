@@ -1,4 +1,5 @@
 import { useState } from "react"
+import ItemCount from "../ItemCount/ItemCount"
 import "./itemDetail.scss"
 
 
@@ -6,6 +7,11 @@ const ItemDetail = ({product}) => {
 
   const [currentImage, setCurrentImage] = useState(product.images[0])
   const refimages = product.images.filter((images)=> images !== currentImage)
+  const addProduct = (count) => {
+
+    const productCart= {...product, quantity: count}
+
+  }
 
   return (
     <div className="item-detail" >
@@ -33,6 +39,8 @@ const ItemDetail = ({product}) => {
 
         <h2>{product.name}</h2>
         <p>{product.description}</p>
+        <p>Precio: {product.price}</p>
+        <ItemCount stock= {product.stock} addProduct={addProduct}/>
 
       </div>
 
