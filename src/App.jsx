@@ -22,10 +22,6 @@ function App() {
           <Route path='/detail/:idProduct' element={ < ItemDetailContainer />} />
 
 
-          {/* <div className='banner-img'>
-            < ItemListContainer greeting= {"La belleza de lo esencial"} />
-            < ItemDetailContainer />
-          </div> */}
         </Routes>
         
         </BrowserRouter>

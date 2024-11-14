@@ -21,11 +21,14 @@
    
 }
 
-.item-detail{
-    margin: 100px 60px 0 60px;
-    display: flex;
+.button-detail{
+ text-decoration: none;
+ color:  #818B81;
+ font-weight: 600;
 }
 
-.text-detail{
-    margin-left: 40px;
+.button-detail:hover{
+    color: #E2B07B;
+    text-decoration: underline;
 }
+
