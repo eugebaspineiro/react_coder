@@ -1,11 +1,17 @@
+import { useContext } from "react";
+import { CartContext } from "../../context/CartContext";
 import { MdOutlineShoppingCart } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 const CartWidget = () => {
+    const { totalQuantity } = useContext(CartContext)
+
+
     return(
-        <div className="cart-widget">
+        <Link to= "/cart" className="cart-widget">
             <MdOutlineShoppingCart />
-            <p className="cart-text">02</p>
-        </div>
+            <p className="cart-text">{totalQuantity()}</p>
+        </Link>
     )
 }
 

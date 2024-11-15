@@ -1,4 +1,5 @@
 import { useState } from "react"
+import "./itemCount.scss"
 
 const ItemCount = ({stock, addProduct}) => {
 
@@ -17,12 +18,18 @@ const handleClickAdd = () =>{
 }
 
   return (
-    <div>
-        <button onClick={handleClickRest}>-</button>
-        <p>{count}</p>
-        <button onClick={handleClickAdd}>+</button>
+    <div className="item-count">
+        <div className="count">
+            <button onClick={handleClickRest}>-</button>
+            <p>{count}</p>
+            <button onClick={handleClickAdd}>+</button>
+        </div>
 
-        <button onClick={()=>ddProduct(count)}>Agregar al carrito</button>
+        <div className="button-add">
+
+            <button onClick={()=>addProduct(count)}>Agregar al carrito</button>
+
+        </div>
       
     </div>
   )

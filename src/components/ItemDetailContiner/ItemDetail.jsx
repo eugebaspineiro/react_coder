@@ -1,5 +1,6 @@
-import { useState } from "react"
+import { useState, useContext } from "react"
 import ItemCount from "../ItemCount/ItemCount"
+import { CartContext } from "../../context/CartContext"
 import "./itemDetail.scss"
 
 
@@ -7,9 +8,13 @@ const ItemDetail = ({product}) => {
 
   const [currentImage, setCurrentImage] = useState(product.images[0])
   const refimages = product.images.filter((images)=> images !== currentImage)
+
+  const { addProductInCart } = useContext(CartContext)
   const addProduct = (count) => {
 
     const productCart= {...product, quantity: count}
+
+    addProductInCart(productCart)
 
   }
 
@@ -39,10 +44,15 @@ const ItemDetail = ({product}) => {
 
         <h2>{product.name}</h2>
         <p>{product.description}</p>
-        <p>Precio: {product.price}</p>
-        <ItemCount stock= {product.stock} addProduct={addProduct}/>
+        <p className="price-detail">Precio: ${product.price}</p> 
+        <div>
+
+          <ItemCount stock= {product.stock} addProduct={addProduct}/>
+
+        </div>       
 
       </div>
+    
 
     </div>
   )

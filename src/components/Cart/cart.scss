@@ -1,0 +1,127 @@
+.title-cart{
+    margin: 60px 60px 0 60px;
+    h2{
+        font-family: "Poppins", sans-serif;
+        font-weight: 700;
+        font-style: normal;
+        font-size: 40px;
+        color: #333333;
+    }
+    .line-cart{
+        height: 8px; 
+        background-color: #333333; 
+        width: 11%; 
+        
+    }
+
+}
+
+.cart{
+    margin: 60px 60px 0 60px;
+    display: flex;
+
+}
+
+.inf-product{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 60vw;
+    img{
+        width: 90px;
+    }
+    p{
+        margin-left: 30px;
+        font-family: "Poppins", sans-serif;
+        font-weight: 300;
+        font-style: normal;
+        font-size: 18px;
+        color: #333333;
+    }
+    .icon{
+        font-size: 30px;
+        color: #333333;
+        cursor: pointer;
+        margin: 0 15px 0 0px;
+
+        
+    }
+    .icon:hover{
+        color: #952a0f;
+    }
+}
+
+.total-price{
+    width: 30vw;
+    margin: 50px 0  50px 30px;
+    background-color: #F2F2F2;
+    padding-left: 20px;
+    padding-right: 20px;
+    h3{
+        font-family: "Poppins", sans-serif;
+        font-weight: 500;
+        font-style: normal;
+        font-size: 20px;
+        color: #333333;
+        text-align: center;
+        padding-top: 20px;
+        padding-bottom: 20px;
+
+    }
+
+    p{
+        font-weight: 300;
+        font-style: normal;
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+
+    button{
+        border: none;
+        background-color: #B4C5A1;
+        width: 100%;
+        padding: 10px 0 10px 0;
+        margin-bottom: 10px;
+        font-weight: 500;
+        font-style: normal;
+        font-size: 16px;
+        border-radius: 10px; 
+        cursor: pointer;       
+    }
+
+    button:hover{
+        background-color: #E2B07B;
+    }
+}
+
+.product-detail{
+    display: flex;
+    width: 60vw;
+    
+    justify-content: space-between;
+}
+
+.buys{
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+}
+
+.line-product{
+    height: 2px; 
+    background-color: #333333; 
+    width: 60vw;
+    margin-top: 5px;
+}
+
+.name-product{
+    display: flex;
+    align-items: center;
+    width: 250px;
+}
+
+.reference{
+    width: 270px;
+}

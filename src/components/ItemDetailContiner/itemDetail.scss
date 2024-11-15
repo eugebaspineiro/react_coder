@@ -6,6 +6,9 @@
 .text-detail{
     margin-left: 40px;
     width: 40%;
+    h2{
+        margin-bottom: 10px;
+    }
 }
 
 .main-image{
@@ -16,20 +19,38 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;  
-    margin-bottom: 20px; 
+    margin-bottom: 20px;
+    cursor: pointer;    
    
 }
 
+
 .size-main-img{
     width: 700px;
+    transition: filter 0.3s ease;
+}
+
+.size-secondary-img:hover{
+    filter: grayscale(1);
 }
 
 .size-secondary-img{
     width: 210px;
+    transition: filter 0.3s ease;
 }
 
 .images-item-detail{
     display: flex;
     flex-direction: column;
     width: 50%;
+}
+
+.price-detail{
+    margin-top: 30px;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 20px;
+    color: #818B81;
+    margin-bottom: 10px;
+
 }
