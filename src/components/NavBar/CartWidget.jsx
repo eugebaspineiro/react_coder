@@ -5,12 +5,13 @@ import { Link } from "react-router-dom";
 
 const CartWidget = () => {
     const { totalQuantity } = useContext(CartContext)
+    const queantity = totalQuantity()
 
 
     return(
         <Link to= "/cart" className="cart-widget">
             <MdOutlineShoppingCart />
-            <p className="cart-text">{totalQuantity()}</p>
+            <p className={ queantity === 0 ? "empty-cart" : "cart-text"}>{queantity >= 1 && queantity}</p>
         </Link>
     )
 }

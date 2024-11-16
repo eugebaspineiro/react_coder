@@ -8,8 +8,12 @@ const ItemListContainer = ({greeting}) => {
 
     const [products, setProducts] = useState([])
     const {idCategory} = useParams()
+    const [loading, setLoading] = useState(true)
 
     useEffect(() => {
+        
+        setLoading(true)
+
         getProducts()
         .then ((dataProducts)=>{
             if(idCategory){
@@ -25,7 +29,7 @@ const ItemListContainer = ({greeting}) => {
             console.log(error)
         })
        .finally(()=>{
-        console.log("finalizo la promesa")
+        setLoading(false)
        })
 
     }, [idCategory])
@@ -36,11 +40,19 @@ const ItemListContainer = ({greeting}) => {
     return(
         <div>
             <div className="item-list">
-            {greeting}
+                {greeting}
             </div>
-            <div className="item-ord">
-                < ItemList products={products} />
-            </div>
+            {
+                loading===true ? (
+                    <div>Cargando...</div>
+                ) : (
+                    <div className="item-ord">
+                        < ItemList products={products} />
+                    </div>
+
+                )
+            }
+
         </div>
     )
 }

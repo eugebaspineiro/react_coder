@@ -1,12 +1,14 @@
 import { useState, useContext } from "react"
 import ItemCount from "../ItemCount/ItemCount"
 import { CartContext } from "../../context/CartContext"
+import { Link } from "react-router-dom"
 import "./itemDetail.scss"
 
 
 const ItemDetail = ({product}) => {
 
   const [currentImage, setCurrentImage] = useState(product.images[0])
+  const [showItemCount, setShowItemCount] = useState (true)
   const refimages = product.images.filter((images)=> images !== currentImage)
 
   const { addProductInCart } = useContext(CartContext)
@@ -15,6 +17,7 @@ const ItemDetail = ({product}) => {
     const productCart= {...product, quantity: count}
 
     addProductInCart(productCart)
+    setShowItemCount(false)
 
   }
 
@@ -44,12 +47,23 @@ const ItemDetail = ({product}) => {
 
         <h2>{product.name}</h2>
         <p>{product.description}</p>
-        <p className="price-detail">Precio: ${product.price}</p> 
-        <div>
+        <p className="price-detail">Precio: ${product.price}</p>
+        {
+          showItemCount === true ? (
+            <div>
+            <ItemCount stock= {product.stock} addProduct={addProduct}/>
+          </div>
+          )  : (
+            <div>
+              <Link to="/cart"><button className="button-tocart">Terminar compra</button></Link>
+              <Link to="/"><button className="button-tohome">Seguir comprando</button></Link>
+            </div>
+          
 
-          <ItemCount stock= {product.stock} addProduct={addProduct}/>
+          )
+        } 
 
-        </div>       
+       
 
       </div>
     

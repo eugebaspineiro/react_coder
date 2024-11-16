@@ -1,11 +1,21 @@
 import { useContext } from "react"
 import { CartContext } from "../../context/CartContext"
 import { MdOutlineDeleteOutline } from "react-icons/md";
+import { Link } from "react-router-dom";
 import "./cart.scss"
 
 const Cart = () => {
 
     const { cart, totalPrice, deleteProductById, deleteCart } = useContext(CartContext)
+
+    if (cart.length === 0) {
+        return(
+            <div>
+                <h2>No hay productos en el carrito</h2>
+                <Link to= "/">Volver al inicio</Link>
+            </div>
+        )
+    }
 
     return (
         <>

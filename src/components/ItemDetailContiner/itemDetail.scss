@@ -54,3 +54,43 @@
     margin-bottom: 10px;
 
 }
+.button-tocart{
+    margin-top: 20px;
+    border: none;
+    background-color: #818B81;
+    color: #F2F2F2;
+    padding: 8px;
+    border-radius: 5px;        
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 15px;
+    width: 550px;
+}
+
+.button-tocart:hover{
+    color: #151515af;
+    background-color: #F2F2F2;
+    cursor: pointer;
+}
+
+.button-tohome{
+    margin-top: 20px;
+    border: none;
+    background-color: #E2B07B;
+    color: #F2F2F2;
+    padding: 8px;
+    border-radius: 5px;        
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 15px;
+    width: 550px;
+}
+
+.button-tohome:hover{
+    color: #151515af;
+    background-color: #F2F2F2;
+    cursor: pointer;
+   
+}
