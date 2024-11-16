@@ -125,3 +125,49 @@
 .reference{
     width: 270px;
 }
+
+.empty-cart{
+    margin: 0 50px 0 50px;
+    display: flex;
+    
+
+}
+
+.text-empty{
+    width: 50vw;
+    margin-top: 10VW;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h2{
+        font-family: "Poppins", sans-serif;
+        font-weight: 700;
+        font-style: normal;
+        font-size: 40px;
+        color: #909d80;
+        margin-top: 100px;
+
+    }
+
+    button{
+        margin-top: 30px;
+        border: none;
+        background-color: #E2B07B;
+        color: #333333;
+        padding: 8px;
+        border-radius: 5px;        
+        font-family: "Poppins", sans-serif;
+        font-weight: 500;
+        font-style: normal;
+        font-size: 15px;
+        width: 300px;
+        cursor: pointer;        
+    }
+    button:hover{
+        background-color: #909d80;
+    }
+}
+
+.img-empty{
+    width: 50vw;
+}

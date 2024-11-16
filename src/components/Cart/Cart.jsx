@@ -10,9 +10,14 @@ const Cart = () => {
 
     if (cart.length === 0) {
         return(
-            <div>
-                <h2>No hay productos en el carrito</h2>
-                <Link to= "/">Volver al inicio</Link>
+            <div className="empty-cart">
+                <div className="text-empty">
+                    <h2>No hay productos en el carrito</h2>          
+                    <Link to= "/"><button>Volver al inicio</button></Link>
+                </div>
+                <div className="img-empty">
+                    <img src="/empty-cart.svg" alt="" />
+                </div>
             </div>
         )
     }
