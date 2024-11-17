@@ -27,8 +27,33 @@ const ItemListContainer = ({greeting}) => {
         })
     }
 
+    const getProductsByCategory = () => {
+
+        const productsRef = collection(db, "products")
+        const queryCategories = query(productsRef, where("category", "==", idCategory))
+        getDocs(queryCategories)
+        .then ( (dataDb) => {
+            const productsDb = dataDb.docs.map((productDb) => {
+                return {id: productDb.id, ...productDb.data()}
+
+            })
+
+            setProducts(productsDb) 
+
+        })
+    }
+
     useEffect(() => {
-        getProducts()
+
+        if (idCategory){
+            getProductsByCategory()
+        } else {
+            getProducts()
+        }
+
+        
+
+
         // setLoading(true)
         
 
@@ -52,9 +77,9 @@ const ItemListContainer = ({greeting}) => {
 
     }, [idCategory])
 
-    const getProductsByCategory = () => {
 
-    }
+
+    
 
     
    
