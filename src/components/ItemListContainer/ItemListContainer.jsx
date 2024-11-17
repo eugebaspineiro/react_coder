@@ -1,8 +1,10 @@
 import "./itemlistcontainer.scss"
 import ItemList from "./ItemList"
-import { getProducts } from "../../data/data"
+// import { getProducts } from "../../data/data"
 import { useParams } from "react-router-dom"
 import { useState, useEffect } from "react"
+import { collection, getDocs, query, where } from "firebase/firestore"
+import db from "../../db/db.js"
 
 const ItemListContainer = ({greeting}) => {
 
@@ -10,29 +12,49 @@ const ItemListContainer = ({greeting}) => {
     const {idCategory} = useParams()
     const [loading, setLoading] = useState(true)
 
+    const getProducts = () => {
+        const productsRef = collection ( db, "products" )
+        getDocs( productsRef )
+        .then((dataDb) => {
+
+            const productsDb = dataDb.docs.map((productDb)=>{
+                return {id: productDb.id, ...productDb.data()}
+
+            })
+
+            setProducts(productsDb)          
+
+        })
+    }
+
     useEffect(() => {
-        
-        setLoading(true)
-
         getProducts()
-        .then ((dataProducts)=>{
-            if(idCategory){
-                const filterProducts= dataProducts.filter((product)=> product.category === idCategory)
-                setProducts(filterProducts)
+        // setLoading(true)
+        
 
-            }else{
-                setProducts(dataProducts)
-            }
+    //     getProducts()
+    //     .then ((dataProducts)=>{
+    //         if(idCategory){
+    //             const filterProducts= dataProducts.filter((product)=> product.category === idCategory)
+    //             setProducts(filterProducts)
+
+    //         }else{
+    //             setProducts(dataProducts)
+    //         }
             
-        })
-        .catch((error)=>{
-            console.log(error)
-        })
-       .finally(()=>{
-        setLoading(false)
-       })
+    //     })
+    //     .catch((error)=>{
+    //         console.log(error)
+    //     })
+    //    .finally(()=>{
+    //     setLoading(false)
+    //    })
 
     }, [idCategory])
+
+    const getProductsByCategory = () => {
+
+    }
 
     
    
@@ -43,7 +65,7 @@ const ItemListContainer = ({greeting}) => {
                 {greeting}
             </div>
             {
-                loading===true ? (
+                loading===false ? (
                     <div>Cargando...</div>
                 ) : (
                     <div className="item-ord">
