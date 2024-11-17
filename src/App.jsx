@@ -7,6 +7,8 @@ import Banner from './components/banner/Banner'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { CartProvider } from './context/CartContext'
 import './App.css'
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
 
@@ -18,7 +20,8 @@ function App() {
 
         <CartProvider>
 
-          <NavBar />        
+          <NavBar />  
+          <ToastContainer/>      
 
           <Routes>
 

@@ -1,10 +1,12 @@
 import { useState  } from "react"
 import { useContext } from "react"
 import { CartContext } from "../../context/CartContext"
-import { Timestamp, addDoc, collection } from "firebase/firestore"
+import { Timestamp, addDoc, collection, doc, setDoc } from "firebase/firestore"
 import { Link } from "react-router-dom"
 import FormCheckout from "./FormCheckout"
 import db from "../../db/db.js"
+import validateForm from "../../utils/validateForm.js"
+import { toast } from "react-toastify"
 
 const Checkout = () => {
 
@@ -25,7 +27,7 @@ const Checkout = () => {
 
     }
 
-    const handleSubmitForm = (event) =>{
+    const handleSubmitForm = async(event) =>{
 
         event.preventDefault()
 
@@ -36,7 +38,19 @@ const Checkout = () => {
             total: totalPrice()
         }
 
-        uploadOrder(order)
+        try {
+            const response = await validateForm(dataForm)
+            if(response.status === "error") throw new Error(response.message)
+
+            toast.success("Subiendo orden...")
+            uploadOrder(order)
+            
+        } catch (error) {
+            toast.error(error.message)
+            
+        }
+
+        
 
     }
 
@@ -46,9 +60,17 @@ const Checkout = () => {
         .then((response) => setIdOrder(response.id))
         .catch((error) => console.error(error))
         .finally(() => {
-            deleteCart()
+            updateStock()
         })
 
+    }
+
+    const updateStock = () => {
+        cart.map(({id, quantity, ...dataProduct}) => {
+            const productRef = doc (db, "products", id)
+            setDoc(productRef, {...dataProduct, stock: dataProduct.stock - quantity})
+        })
+        deleteCart()
     }
 
   return (
