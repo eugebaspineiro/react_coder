@@ -68,7 +68,7 @@ const Cart = () => {
             <div className="total-price">
                 <h3>Detalle de la compra</h3>
                 <p>Precio total: {totalPrice()}</p>
-                <button>Finalizar compra</button>
+                <Link to="/checkout"><button>Finalizar compra</button></Link>
                 <button onClick={deleteCart}>Vaciar carrito</button>
             </div>
           
