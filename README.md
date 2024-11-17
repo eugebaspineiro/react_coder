@@ -1,8 +1,24 @@
-# React + Vite
+# Eccomerce 
+    
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Descripcion 
+    Kanso es un e-commerce diseñado para quienes buscan incorporar el minimalismo y la funcionalidad en sus espacios interiores. Inspirado en la filosofía japonesa de la simplicidad, Kanso ofrece productos de diseño atemporal, como sillones modulares, mesas de centro multifuncionales y lámparas elegantes
 
-Currently, two official plugins are available:
+    🚀 Características principales
+        Diseño minimalista y moderno: Interfaz intuitiva que refleja        la filosofía de Kanso.
+        Selección personalizada: Los usuarios pueden elegir colores de      paredes y visualizar los productos en diferentes ambientes.
+        Carrito de compras dinámico: Implementación con React para una      experiencia de compra fluida y reactiva.
+        I       ntegración con Firebase: Almacenamiento de datos y gestión de   pedidos en tiempo real.
+        Responsive Design: Adaptado para dispositivos móviles,      tabletas y escritorios.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+    🛠️ Tecnologías utilizadas
+        Frontend: React con Vite.
+        Backend: Firebase Firestore.
+        Estilos: CSS y diseño responsive.
+        Librerías adicionales:
+        Toastify para notificaciones.
+        React Router para la navegación.
+
+## Dependencias
+`React toastify` `React` `React dom` `Firebase` `React icons` `React-router-dom` `Yup`
+

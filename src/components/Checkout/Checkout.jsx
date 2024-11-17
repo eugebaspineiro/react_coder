@@ -7,6 +7,7 @@ import FormCheckout from "./FormCheckout"
 import db from "../../db/db.js"
 import validateForm from "../../utils/validateForm.js"
 import { toast } from "react-toastify"
+import "./formCheckout.scss"
 
 const Checkout = () => {
 
@@ -39,6 +40,10 @@ const Checkout = () => {
         }
 
         try {
+            if (dataForm.email !== dataForm.confirmemail) {
+                throw new Error("Los correos electrónicos no coinciden. Por favor, verifica.");
+              }
+
             const response = await validateForm(dataForm)
             if(response.status === "error") throw new Error(response.message)
 
@@ -80,9 +85,10 @@ const Checkout = () => {
             idOrder === null ? ( <FormCheckout dataForm={dataForm} handleChangeInput={handleChangeInput} handleSubmitForm={handleSubmitForm}/> 
 
             ) : (
-                <div>
-                    <h2>Gracias, su orden a sido enviada</h2>
-                    <p>Por favor guarde su numero de seguimiento: {idOrder}</p>
+                <div className="finish-form">
+                    <img src="/compra-finalizada.svg" alt="" />
+                    <h2>Gracias, su orden fue enviada</h2>
+                    <p>Por favor guarde su numero de seguimiento: <strong>{idOrder}</strong> </p>
                     <Link to="/"><button>Volver al inicio</button></Link>
                 </div>
             

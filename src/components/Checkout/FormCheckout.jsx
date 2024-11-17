@@ -1,22 +1,32 @@
+import "./formCheckout.scss"
+
 
 const FormCheckout = ({dataForm, handleChangeInput, handleSubmitForm}) => {
   return (
-    <form onSubmit={ handleSubmitForm }>
-        <label>Nombre completo</label>
-        <input type="text" name="fullname" value={dataForm.fullname} onChange={ handleChangeInput } />
+    <>
+        <div className="form-checkout" >
+            <h2>Formulario de orden</h2>
+            <div className="line-cart"></div>
+        </div>
 
-        <label>Telefono</label>
-        <input type="number" name="phone" value={dataForm.phone} onChange={ handleChangeInput } />
 
-        <label>Email</label>
-        <input type="email" name="email" value={dataForm.email} onChange={ handleChangeInput } />
+        <form onSubmit={ handleSubmitForm } className="form">
+            <label>Nombre completo</label>
+            <input type="text" name="fullname" value={dataForm.fullname} onChange={ handleChangeInput } />
 
-        <label>Confirmar email</label>
-        <input type="email" name="confirmemail" value={dataForm.confirmemail} onChange={ handleChangeInput } />
+            <label>Telefono</label>
+            <input type="number" name="phone" value={dataForm.phone} onChange={ handleChangeInput } />
 
-        <button type="submit">Enviar mi orden</button>
+            <label>Email</label>
+            <input type="email" name="email" value={dataForm.email} onChange={ handleChangeInput } />
 
-  </form>
+            <label>Confirmar email</label>
+            <input type="email" name="confirmemail" value={dataForm.confirmemail} onChange={ handleChangeInput } />
+
+            <button type="submit">Enviar mi orden</button>
+
+        </form>
+  </>
 
   )
 }

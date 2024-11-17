@@ -1,4 +1,5 @@
 import NavBar from './components/NavBar/NavBar'
+import FoterApp from './components/footer/FoterApp'
 import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 import ItemDetailContainer from './components/ItemDetailContiner/ItemDetailContainer'
 import Checkout from './components/Checkout/Checkout'
@@ -34,8 +35,12 @@ function App() {
           </Routes>
 
           </CartProvider>
+
+          < FoterApp />
+
         
         </BrowserRouter>
+
      
     </div>
   )
