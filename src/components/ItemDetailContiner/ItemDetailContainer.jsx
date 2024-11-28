@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-//import { getProducts } from "../../data/data.js";
 import { useParams } from "react-router-dom";
 import ItemDetail from "./ItemDetail.jsx";
 import { doc, getDoc } from "firebase/firestore";
@@ -30,14 +29,7 @@ const ItemDetailContainer = () => {
       setLoading(true)
       getProductById()
 
-      // setLoading(true)
-
-      // getProducts()
-      //   .then ((data)=>{
-      //     const findProduct = data.find((product) => product.id === idProduct)
-      //    setProducts(findProduct)
-      // })
-      // .finally (()=> setLoading(false))
+      
     }, [idProduct]);
 
 
